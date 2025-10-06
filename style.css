@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+
+
+
+:root {
+  --bege-claro: #fdf6ec;     /* fundo bem suave */
+  --bege-medio: #e6d8c3;     /* detalhe / box */
+  --bege-escuro: #c4b69a;    /* contraste suave */
+  --verde-oliva: #556b2f;    /* destaque principal */
+  --verde-oliva-claro: #6b8e23; /* variação para hover/detalhes */
+  --dark-bege: #33211c;          /* textos principais */
+  --branco: #ffffff;         /* textos ou fundos neutros */
+  
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+
+  background: var(--bege-claro);
+  color: var(--dark-bege);
+}
+
+/* NAVBAR */
+.navbar {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--dark-bege);
+  padding: 1rem 2rem;
+}
+.logo { color: var(--branco); font-weight: bold; font-size: 1.2rem; }
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: var(--bege-claro);
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+  transition: opacity .3s;
+}
+
+.nav-links a:hover { opacity: .7; }
+
+/* HAMBURGER (mobile) */
+.hamburger {
+  background: var(--dark-bege);
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px; height: 3px;
+  background: var(--branco);
+  border-radius: 3px;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: var(--branco);
+}
+.hero h1 { 
+    color: var(--dark-bege);
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3rem; margin-bottom: .5rem; 
+    
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+h2 {
+   color: var(--dark-bege);
+   font-family: "Roboto", sans-serif;
+    text-align: center;
+
+}
+
+h4 {
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+#mapaCasa .map-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;   /* limita a largura em telas grandes */
+  margin: 0 auto;     /* centraliza */
+  padding-bottom: 65%; /* aumenta altura (teste 65% ou até 75%) */
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2); /* opcional */
+}
+
+#mapaCasa .map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+
+/* GRID ÍCONES */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 20px;
+  padding: 2rem;
+}
+
+
+.icones {
+    font-family: "Roboto", sans-serif;
+    font-size: 50px; /* aumenta o ícone */
+    color: var(--dark-bege);  /* cor do ícone */
+    display: block;  /* faz ele ficar sozinho, sem quebrar layout */
+    text-align: center; /* centraliza dentro do link, se quiser */
+    margin: 10px 0; /* espaçamento acima/baixo */
+  
+} 
+
+.icones i:hover {
+  color:var(--bege-medio);        /* amarelo dourado no hover */
+}
+
+/* --- SEÇÕES EM BOX --- */
+.big-section {
+  width: 100%;
+  min-height: 100vh;           /* ocupa no mínimo a altura da tela */
+  display: flex;
+  justify-content: center;     /* centraliza horizontalmente */
+  align-items: center;         /* centraliza verticalmente */
+  background: var(--bege-medio); /* cor de fundo suave */
+  padding: 40px 20px;
+}
+
+.icones i {
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55), color 0.3s ease;
+}
+
+.icones.ativo i {
+  color: var(--bege-medio); /* mesma cor do hover desktop */
+  transform: scale(1.4);     /* cresce além do tamanho final e volta suavemente */
+}
+
+
+/* alterna fundo entre branco e azul pastel para cada bloco */
+.big-section:nth-child(even) {
+  background: var(--bege-escuro);
+}
+
+/* caixa interna */
+.section-content {
+  background: #fff;
+  max-width: 900px;
+  width: 100%;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  color: var(--dark-bege);
+  align-items: center;
+}
+
+.section-content h2 {
+  font-family: "Roboto", sans-serif;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+
+
+.section-content ul {
+  margin-left: 20px;
+  list-style: disc;
+}
+
+ul {
+  font-family: "Roboto", sans-serif;
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  margin-bottom: 8px;
+}
+
+.maplink i {
+  margin-left: 10px;      /* espaçamento entre texto e ícone */
+  font-size: 25px;
+  color: var(--dark-bege);       
+  transition: color 0.3s;
+}
+
+.maplink i:hover {
+  color: var(--bege-escuro);      
+}
+
+.maplink {
+  text-decoration: none;
+  color: var(--dark-bege);
+} 
+
+.instagram i {
+  margin-left: 10px;      /* espaçamento entre texto e ícone */
+  font-size: 25px;
+  color: var(--dark-bege);        /* azul marinho */
+  transition: color 0.3s;
+}
+
+.instagram i:hover {
+  color:var(--bege-escuro);        /* amarelo dourado no hover */
+}
+
+.wpp i {
+  margin-left: 10px;      /* espaçamento entre texto e ícone */
+  font-size: 30px;
+  color: var(--dark-bege);        /* azul marinho */
+  transition: color 0.3s;
+}
+
+.wpp i:hover {
+  color:var(--bege-escuro);        /* amarelo dourado no hover */
+}
+
+/* BOTAO SAIBA MAIS */
+.btn-saibamais {
+  display: inline-block;        /* faz o botão ocupar linha própria */
+  margin: 16px auto 0; 
+  margin-left: 10px;  
+  font-family: "Roboto", sans-serif;
+  background-color: var(--dark-bege);
+  color: var(--bege-claro);
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+.btn-saibamais:hover {
+  background-color: #c8d9f0;
+  color: var(--dark-bege);
+}
+
+
+ 
+
+/* FOOTER */
+footer {
+  font-family: "Roboto", sans-serif;
+  background: var(--bege-medio);
+  color: var(--dark-bege);
+  text-align: center;
+  padding: 1rem;
+}
+
+.btn-topo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--dark-bege); /* azul marinho */
+  color: white;
+  font-size: 22px; /* tamanho do ícone */
+  padding: 12px;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  display: none; /* começa escondido */
+  transition: background 0.3s;
+}
+
+.btn-topo:hover {
+  background-color: #c8d9f0;
+  color: var(--dark-bege);
+}
+
+
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: var(--dark-bege);
+    flex-direction: column;
+    width: 200px;
+    display: none;
+    padding: 1rem;
+    border-radius: 12px;
+  }
+  .nav-links.show { display: flex; }
+  .hamburger { display: flex; }
+}
